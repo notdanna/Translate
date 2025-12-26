@@ -29,12 +29,17 @@ model_base = AutoModelForSeq2SeqLM.from_pretrained(
     attn_implementation="eager" 
 )
 tokenizer = AutoTokenizer.from_pretrained(config.base_model_name_or_path)
-model = PeftModel.from_pretrained(model_base, ruta_modelo)
+# model = PeftModel.from_pretrained(model_base, ruta_modelo)
 
 if torch.backends.mps.is_available(): device = "mps"
 else: device = "cpu"
+
+
+model = model_base  # USA EL MODELO BASE SIN LORA
 model = model.to(device)
 model.eval()
+
+
 
 # Mapeo de códigos de idioma
 CODIGOS = {
@@ -108,7 +113,7 @@ def graficar_capa_2(matrix, inputs, target_inputs, src_lang="es", tgt_lang="it")
     plt.show()
 
 # --- EJECUCIÓN ---
-frase = "Necesito hacer un modelo de traducción automática"
+frase = "me quiero matar antes de hoy"
 src = "es"  # Cambiar según necesites: es, it, ja, zh
 tgt = "ja"  # Cambiar según necesites: es, it, ja, zh
 

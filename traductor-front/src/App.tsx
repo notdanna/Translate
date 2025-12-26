@@ -109,7 +109,7 @@ function App() {
           <div className="p-3 bg-blue-600 rounded-full text-white shadow-lg shadow-blue-200">
             <Languages size={28} />
           </div>
-          <h1 className="text-3xl md:text-4xl font-bold text-slate-800 tracking-tight">Traductor NLLB</h1>
+          <h1 className="text-3xl md:text-4xl font-bold text-slate-800 tracking-tight">Traductor ML</h1>
         </div>
         <p className="text-slate-500 font-medium">Fine-Tuning Local • Multilingüe</p>
       </div>
