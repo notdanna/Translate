@@ -34,8 +34,8 @@ model_base = AutoModelForSeq2SeqLM.from_pretrained(
 
 # Cargar LoRA 
 
-model = PeftModel.from_pretrained(model_base, ruta_modelo)
-#model = model_base
+#model = PeftModel.from_pretrained(model_base, ruta_modelo)
+model = model_base
 model = model.to(device)
 model.eval()
 
